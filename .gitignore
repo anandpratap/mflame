@@ -1,0 +1,9 @@
+*.o
+mflame
+*.dat
+*.png
+*.lay
+*.mod
+*~
+*workspace
+*.log
