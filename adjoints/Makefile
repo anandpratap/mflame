@@ -5,7 +5,7 @@ all:
 	$(TPN) $(TPNFLAGS) \
 	../src/modules.f90 ../src/step.f90 ../src/advection.f90 ../src/diffusion.f90 \
 	../src/source.f90 ../src/boundary_conditions.f90 \
-	-vars "q residual" -head "compute_residual"
+	-outvars "residual" -vars "q" -head "compute_residual"
 	@bash cleanup.bash
 
 clean:
