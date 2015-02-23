@@ -28,10 +28,10 @@
 		real :: length
 		data length/30e-3/
 
-	! ideally this should be variable sized
-	real :: qinf(4)
-	data qinf/300.0, 0.2, 0.2, 0.0/
-
-	integer :: nhalo
-	data nhalo/1/
-end module params_global
+	    ! ideally this should be variable sized
+	    real :: qinf(4)
+	    data qinf/300.0, 0.2, 0.2, 0.0/
+	    
+	    integer :: nhalo
+	    data nhalo/1/
+	end module params_global
