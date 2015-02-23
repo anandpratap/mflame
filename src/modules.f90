@@ -5,7 +5,7 @@
 		integer :: maximum_iteration
 
 		data absolute_tolerance, relative_tolerance/1e-6, 1e-6/
-		data dt/1e-4/
+		data dt/1e-6/
 		data maximum_iteration/1000000000/
 
 		integer :: nx, nq
@@ -31,7 +31,11 @@
 	    ! ideally this should be variable sized
 	    real :: qinf(4)
 	    data qinf/300.0, 0.2, 0.2, 0.0/
-	    
+
 	    integer :: nhalo
 	    data nhalo/1/
+
+	    integer :: iread
+	    data iread/0/
+
 	end module params_global
