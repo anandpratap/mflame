@@ -1,8 +1,9 @@
 	subroutine source(x, q, residual)
 		use params_global
 		implicit none
-		real, dimension(nx) :: x
-		real, dimension(nx, nq) :: q, residual
+		real, dimension(nx), intent(in) :: x
+		real, dimension(nx, nq), intent(in) :: q
+		real, dimension(nx, nq), intent(inout) :: residual
 		
 		integer :: i, j
 		real :: kf, qi
@@ -17,18 +18,16 @@
 			wdot(3) = -qi
 			wdot(4) = qi
 			do j=2,nq
-				wddot(j) = wdot(j)*0.029
-			end do
-			wdot(1) = 0.0
-			do j=2, nq
-				wdot(1) = wdot(1) + wddot(j)*q(i,1)
+				wddot(j) = wdot(j)*mw
 			end do
 			
+			wdot(1) = qi*hk/cp
+						
 			do j=2, nq
 				residual(i,j) = residual(i,j) +  wddot(j)
 			end do
 			
-			residual(i,1) = residual(i,j) + wdot(1)
+			residual(i,1) = residual(i,1) + wdot(1)
 			
 		end do
 	end subroutine source
