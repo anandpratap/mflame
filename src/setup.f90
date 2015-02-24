@@ -1,8 +1,8 @@
 	subroutine initialize(x, q)
 		use params_global
 		implicit none
-		real, dimension(nx) :: x
-		real, dimension(nx, nq) :: q
+		real, dimension(nx), intent(out) :: x
+		real, dimension(nx, nq), intent(out) :: q
 
 
 		integer :: i, j

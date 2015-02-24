@@ -1,13 +1,15 @@
 	subroutine read_inputs()
+		use params_global
 		implicit none
-
+		read(5, inputs)
+		write(*, inputs)
 	end subroutine read_inputs
 
 	subroutine write_outputs(x, q)
 		use params_global
 		implicit none
-		real, dimension(nx) :: x
-		real, dimension(nx,nq) :: q
+		real, dimension(nx), intent(in) :: x
+		real, dimension(nx,nq), intent(in) :: q
 
 		integer :: i, j
 
@@ -30,7 +32,7 @@
 	subroutine read_solution(q)
 		use params_global
 		implicit none
-		real, dimension(nx,nq) :: q
+		real, dimension(nx,nq), intent(out) :: q
 
 		integer :: i, j
 

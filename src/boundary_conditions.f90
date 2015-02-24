@@ -1,9 +1,8 @@
 	subroutine boundary_conditions(x, q)
 		use params_global
 		implicit none
-		real, dimension(nx) :: x
-		real, dimension(nx, nq) :: q
-
+		real, dimension(nx), intent(in) :: x
+		real, dimension(nx, nq), intent(inout) :: q
 
 		integer :: j
 

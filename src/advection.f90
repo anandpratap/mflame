@@ -1,9 +1,10 @@
 	subroutine advection(x, q, residual)
 		use params_global
 		implicit none
-		real, dimension(nx) :: x
-		real, dimension(nx, nq) :: q, residual
-		
+		real, dimension(nx), intent(in) :: x
+		real, dimension(nx, nq), intent(in) :: q
+		real, dimension(nx, nq), intent(inout) :: residual
+			
 		integer :: i, j
 		
 		do i=nhalo+1, nx-nhalo

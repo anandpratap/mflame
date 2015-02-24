@@ -18,12 +18,12 @@
 
 	    ! intialize solution and spatial array, setup.f90
 	    call initialize(x, q)
-	    if(iread) then
+	    if(iread .eq. 1) then
 	    	call read_solution(q)
 	    end if
 
 	    ! open file for residual logging
-	    open(unit=log_residual, file='residual.log', status='unknown', form='formatted', buffered='no')
+	    open(unit=log_residual, file='residual.log', status='unknown', form='formatted')
 
 	    ! enter solution loop
 	    do
